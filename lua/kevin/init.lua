@@ -1,0 +1,37 @@
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local config_path = vim.fn.stdpath('config')
+local java_debug_path = config_path .. '/java-debug/'
+local vscode_java_test_path = config_path .. '/vscode-java-test/'
+local google_java_format_path = config_path .. '/google-java-format/'
+
+if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
+    print('cloning packer...')
+    vim.fn.execute(
+        '!git clone https://github.com/wbthomason/packer.nvim ' .. install_path
+    )
+end
+
+if vim.fn.empty(vim.fn.glob(java_debug_path)) > 0 then
+    print('cloning java-debug...')
+    print('please cd into java-debug and mvnw clean install (mvnw.cmd clean install for windows)')
+    vim.fn.execute(
+        '!git clone https://github.com/microsoft/java-debug.git ' .. java_debug_path
+    )
+end
+
+if vim.fn.empty(vim.fn.glob(vscode_java_test_path)) > 0 then
+    print('cloning vscode-java-test...')
+    print('please cd into vscode-java-test and npm install')
+    vim.fn.execute(
+        '!git clone https://github.com/microsoft/vscode-java-test.git ' .. vscode_java_test_path
+    )
+end
+
+if vim.fn.empty(vim.fn.glob(google_java_format_path)) > 0 then
+    print('cloning google-java-format...')
+    print('please mvn install after clone')
+    print('or npm install google-java-format -g to path')
+    vim.fn.execute(
+        '!git clone https://github.com/google/google-java-format.git ' .. google_java_format_path
+    )
+end
