@@ -19,6 +19,7 @@ local home = vim.fn.has("macunix") == 1 and "~" or "C:/Users/H0268"
 local config_path = vim.fn.stdpath("config"):gsub("\\", "/")
 local java_debug_path = config_path .. "/java-debug/"
 local vscode_java_test_path = config_path .. "/vscode-java-test/"
+local lombok_path = home .. "/lombok.jar"
 
 local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
@@ -31,7 +32,7 @@ local function lsp_keymaps(bufnr)
     vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format({ async = true })' ]])
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<F3>", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ac", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ac", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<M-s>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ac", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
@@ -111,12 +112,18 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms1g",
+        "-Xms2g",
+        "-Xms100m",
+        "-XX:AdaptiveSizePolicyWeight=90",
+        "-XX:GCTimeRatio=4",
+        "-XX:+UseParallelGC",
+        "-Dsun.zip.disableMemoryMapping=true",
         "--add-modules=ALL-SYSTEM",
         "--add-opens",
         "java.base/java.util=ALL-UNNAMED",
         "--add-opens",
         "java.base/java.lang=ALL-UNNAMED",
+        "-javaagent:" .. lombok_path,
 
         "-jar",
         vim.fn.glob(home .. "/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
@@ -135,11 +142,6 @@ local config = {
 
     settings = {
         java = {
-            jdt = {
-                ls = {
-                    vmargs = '-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx2G -Xms100m -javaagent:"C:\\Users\\H0268\\lombok.jar"',
-                },
-            },
             eclipse = {
                 downloadSources = true,
             },
