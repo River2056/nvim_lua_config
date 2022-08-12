@@ -207,9 +207,9 @@ local config = {
 require("jdtls").start_or_attach(config)
 
 vim.keymap.set("n", "<A-o>", '<Cmd>lua require"jdtls".organize_imports()<CR>')
-vim.keymap.set("n", "crv", '<Cmd>lua require("jdtls").extract_variable()<CR>')
+-- vim.keymap.set("n", "crv", '<Cmd>lua require("jdtls").extract_variable()<CR>')
 vim.keymap.set("v", "crv", '<Esc><Cmd>lua require("jdtls").extract_variable(true)<CR>')
-vim.keymap.set("n", "crc", '<Cmd>lua require("jdtls").extract_constant()<CR>')
+-- vim.keymap.set("n", "crc", '<Cmd>lua require("jdtls").extract_constant()<CR>')
 vim.keymap.set("v", "crc", '<Esc><Cmd>lua require("jdtls").extract_constant(true)<CR>')
 vim.keymap.set("v", "crm", '<Esc><Cmd>lua require("jdtls").extract_method(true)<CR>')
 
