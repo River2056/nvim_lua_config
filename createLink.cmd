@@ -18,8 +18,11 @@ mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope.rc.lua C:\Users\
 
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\java.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\java.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\python.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\python.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\javascript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\javascript.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\typescript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\typescript.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
+mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\abbreviations.lua C:\Users\H0268\Documents\nvim_lua_config\lua\abbreviations.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\augroups.lua C:\Users\H0268\Documents\nvim_lua_config\lua\augroups.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\base.lua C:\Users\H0268\Documents\nvim_lua_config\lua\base.lua

@@ -1,10 +1,10 @@
 require('kevin')
+require('plugins')
 require('base')
 require('maps')
 require('abbreviations')
 require('augroups')
 require('functions')
-require('plugins')
 
 local has = function(x)
     return vim.fn.has(x) == 1
