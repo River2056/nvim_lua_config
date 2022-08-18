@@ -9,6 +9,7 @@ local servers = {
     "sumneko_lua",
     "html",
     "tsserver",
+    "jsonls",
 }
 
 for _, name in pairs(servers) do

@@ -15,11 +15,13 @@ mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\nvim-tree.rc.lua C:\Users\
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\nvim-treesitter.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\nvim-treesitter.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope-ui-select.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\telescope-ui-select.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\telescope.rc.lua
+mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\rest.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\rest.rc.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\java.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\java.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\python.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\python.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\javascript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\javascript.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\typescript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\typescript.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\vue.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\vue.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua
