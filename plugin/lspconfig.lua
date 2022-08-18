@@ -10,6 +10,7 @@ local servers = {
     "html",
     "tsserver",
     "jsonls",
+    "vuels",
 }
 
 for _, name in pairs(servers) do
