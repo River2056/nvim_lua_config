@@ -190,6 +190,10 @@ local config = {
         signatureHelp = { enabled = true },
         contentProvider = { preferred = "fernflower" },
         extendedClientCapabilities = extendedClientCapabilities,
+        settings = {
+            ["java.format.settings.url"] = "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+            ["java.format.settings.profile"] = "GoogleStyle",
+        },
     },
 
     -- Language server `initializationOptions`
