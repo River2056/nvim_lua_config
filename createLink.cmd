@@ -22,6 +22,7 @@ mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\python.lua C:\Users\H0268\Docu
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\javascript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\javascript.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\typescript.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\typescript.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\vue.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\vue.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\go.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\go.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua

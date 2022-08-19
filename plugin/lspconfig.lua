@@ -11,6 +11,8 @@ local servers = {
     "tsserver",
     "jsonls",
     "vuels",
+    "gopls",
+    "golangci_lint_ls",
 }
 
 for _, name in pairs(servers) do

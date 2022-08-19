@@ -23,6 +23,8 @@ ln -sf ~/nvim_lua_config/ftplugin/java.lua ~/.config/nvim/ftplugin/java.lua
 ln -sf ~/nvim_lua_config/ftplugin/python.lua ~/.config/nvim/ftplugin/python.lua
 ln -sf ~/nvim_lua_config/ftplugin/javascript.lua ~/.config/nvim/ftplugin/javascript.lua
 ln -sf ~/nvim_lua_config/ftplugin/typescript.lua ~/.config/nvim/ftplugin/typescript.lua
+ln -sf ~/nvim_lua_config/ftplugin/vue.lua ~/.config/nvim/ftplugin/vue.lua
+ln -sf ~/nvim_lua_config/ftplugin/go.lua ~/.config/nvim/ftplugin/go.lua
 
 ln -sf ~/nvim_lua_config/lua/kevin/init.lua ~/.config/nvim/lua/kevin/init.lua
 ln -sf ~/nvim_lua_config/lua/kevin/constants.lua ~/.config/nvim/lua/kevin/constants.lua

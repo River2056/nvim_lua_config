@@ -3,12 +3,13 @@ function compileRun()
 
     local filetype = vim.bo.filetype
     local path = vim.fn.expand("%")
+    local directoryprefix = vim.fn.getcwd()
     if filetype == "java" then
         print(path)
         vim.cmd("!javac -cp src -d bin " .. path)
         print("compile success: " .. path)
 
-        path = path:gsub("\\", "."):gsub("/", "."):gsub(".java", ""):gsub("src.", "")
+        path = path:gsub(directoryprefix, ""):gsub("\\", "."):gsub("/", "."):gsub(".java", ""):gsub("src.", "")
         print(path)
         vim.cmd("!java -cp ./bin " .. path)
     elseif filetype == "javascript" then
