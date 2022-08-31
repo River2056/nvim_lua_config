@@ -1,9 +1,9 @@
-local u = require('utils')
+local u = require("utils")
 
 vim.opt.compatible = false
-vim.opt.encoding = 'utf-8'
-vim.opt.fileencoding = 'utf-8'
-vim.scriptencoding = 'utf-8'
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
+vim.scriptencoding = "utf-8"
 
 vim.opt.title = true
 vim.opt.showmode = false
@@ -28,13 +28,14 @@ vim.opt.hidden = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.cmd [[colorscheme gruvbox]]
-vim.opt.background = 'dark'
+vim.cmd([[colorscheme gruvbox]])
+vim.opt.background = "dark"
 
-vim.opt.path:append { '**' } -- Finding files - Search down into subdirectories
-vim.opt.iskeyword:append { '-' }
+vim.opt.path:append({ "**" }) -- Finding files - Search down into subdirectories
+vim.opt.iskeyword:append({ "-" })
 
-vim.cmd('au! BufWritePost $MYVIMRC source $MYVIMRC')
+vim.cmd("au! BufWritePost $MYVIMRC source $MYVIMRC")
+-- vim.cmd("au! BufReadPost *.kt setlocal filetype=kotlin")
 
 vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])

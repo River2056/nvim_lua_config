@@ -104,7 +104,7 @@ local config = {
     -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
     cmd = {
 
-        "C:/Program Files/OpenJDK/jdk-17.0.2/bin/java.exe", -- or '/path/to/java17_or_newer/bin/java'
+        c.jdtls_java_path, -- or '/path/to/java17_or_newer/bin/java'
         -- depends on if `java` is in your $PATH env variable and if it points to the right version.
 
         "-Declipse.application=org.eclipse.jdt.ls.core.id1",
@@ -112,7 +112,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms4G",
+        "-Xms2g",
         "-Xms100m",
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
@@ -150,19 +150,19 @@ local config = {
                 runtimes = {
                     {
                         name = "JavaSE-11",
-                        path = "C:/Program Files/Eclipse Adoptium/jdk-11.0.16.8-hotspot",
+                        path = c.jdtls_jdk11_path,
                     },
                     {
                         name = "JavaSE-15",
-                        path = "C:/openjdk-15.0.2_windows-x64_bin/jdk-15.0.2",
+                        path = c.jdtls_jdk15_path,
                     },
                     {
                         name = "JavaSE-17",
-                        path = "C:/Program Files/OpenJDK/jdk-17.0.2",
+                        path = c.jdtls_jdk17_path,
                     },
                     {
-                        name = "JavaSE-8",
-                        path = "C:/Program Files/Java/jdk1.8.0_211",
+                        name = "JavaSE-1.8",
+                        path = c.jdtls_jdk8_path,
                     },
                 },
             },
@@ -233,7 +233,7 @@ dap.configurations.java = {
         request = "attach",
         name = "Debug (Attach) - Remote",
         hostName = "127.0.0.1",
-        port = 8000,
+        port = c.jdtls_debug_port,
     },
 }
 

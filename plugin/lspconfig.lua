@@ -13,6 +13,9 @@ local servers = {
     "vuels",
     "gopls",
     "golangci_lint_ls",
+    "emmet_ls",
+    "kotlin_language_server",
+    "powershell_es",
 }
 
 for _, name in pairs(servers) do

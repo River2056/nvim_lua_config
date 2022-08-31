@@ -23,6 +23,8 @@ New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\typescript.lua -Target C:\Users\User\nvim_lua_config\ftplugin\typescript.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\vue.lua -Target C:\Users\User\nvim_lua_config\ftplugin\vue.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\go.lua -Target C:\Users\User\nvim_lua_config\ftplugin\go.lua
+New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\kotlin.lua -Target C:\Users\User\nvim_lua_config\ftplugin\kotlin.lua
+New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\ps1.lua -Target C:\Users\User\nvim_lua_config\ftplugin\ps1.lua
 
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\init.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\init.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\constants.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\constants.lua
