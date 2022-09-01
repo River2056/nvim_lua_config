@@ -1,7 +1,7 @@
 local keymap = vim.keymap
 
 -- leader key
-vim.g.mapleader = ","
+vim.g.mapleader = " "
 
 -- quick escape from insert mode
 keymap.set("i", "jk", "<Escape>")
@@ -9,7 +9,7 @@ keymap.set("i", "kj", "<Escape>")
 
 keymap.set("n", "<Leader>aa", ":%y+<Return>")
 keymap.set("n", "<Leader>ss", ":w<Return>")
-keymap.set("n", "<Space>", "za")
+-- keymap.set("n", "<Space>", "za")
 keymap.set("n", "<Leader>ev", ":Hex! C:/Users/H0268/AppData/Local/nvim/<Return>")
 keymap.set("n", "<Leader>sv", ":source $MYVIMRC<Return>")
 keymap.set("n", "<Leader>o", ":Ex<Return>")

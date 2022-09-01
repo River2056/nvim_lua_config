@@ -12,6 +12,6 @@ M.jdtls_jdk15_path = "C:/openjdk-15.0.2_windows-x64_bin/jdk-15.0.2"
 M.jdtls_jdk17_path = "C:/Program Files/OpenJDK/jdk-17.0.2"
 M.jdtls_jdk8_path = "C:/Program Files/Zulu/zulu-8"
 M.jdtls_debug_port = 8000
-M.powershell_es_path = vim.fn.stdpath("data"):gsub("\\", "/") .. "lsp_servers/powershell_es"
+M.powershell_es_path = vim.fn.stdpath("data"):gsub("\\", "/") .. "/lsp_servers/powershell_es"
 
 return M
