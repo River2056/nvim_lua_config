@@ -38,10 +38,9 @@ ln -sf ~/nvim_lua_config/lua/macos.lua ~/.config/nvim/lua/macos.lua
 ln -sf ~/nvim_lua_config/lua/maps.lua ~/.config/nvim/lua/maps.lua
 ln -sf ~/nvim_lua_config/lua/plugins.lua ~/.config/nvim/lua/plugins.lua
 ln -sf ~/nvim_lua_config/lua/utils.lua ~/.config/nvim/lua/utils.lua
-/n -sf ~/nvim_lua_config/lua/windows.lua ~/.config/nvim/lua/windows.lua
+ln -sf ~/nvim_lua_config/lua/windows.lua ~/.config/nvim/lua/windows.lua
 
-ln -sf C:\Users\H0268\AppData\Local\nvim\plugin\lspconfig.lua C:\Users\H0268\Documents\nvim_lua_config\plugin\lspconfig.lua
-ln -sf C:\Users\H0268\AppData\Local\nvim\plugin\null-ls.rc.lua C:\Users\H0268\Documents\nvim_lua_config\plugin\null-ls.rc.lua
-ln -sf C:\Users\H0268\AppData\Local\nvim\plugin\lspconfig.lua C:\Users\H0268\Documents\nvim_lua_config\plugin\lspconfig.lua
+ln -sf ~/nvim_lua_config/plugin/lspconfig.lua ~/.config/nvim/plugin/lspconfig.lua
+ln -sf ~/nvim_lua_config/plugin/plugin/null-ls.rc.lua ~/.config/nvim/plugin/null-ls.rc.lua
 
 ln -sf ~/nvim_lua_config/init.lua ~/.config/nvim/init.lua
