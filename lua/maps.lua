@@ -67,6 +67,10 @@ keymap.set("n", "<M-j>", "<C-w>-")
 keymap.set("v", ">", ">gv")
 keymap.set("v", "<", "<gv")
 
+-- Visual move line
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
 -- Neogit
 keymap.set("n", "<Leader>gs", ":Neogit<Return>")
 keymap.set("n", "<Leader>dg", ":diffget<Return>")
