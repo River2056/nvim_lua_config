@@ -34,6 +34,9 @@ end
 
 vim.keymap.set("n", "<Leader>r", ":lua compileRun()<Return>")
 
+-- run lua filter
+vim.keymap.set("v", "<Leader>r", ":'<,'>!lua<Return>")
+
 function changeCase()
     word = vim.fn.expand("<cword>")
     if word:find("[_\\w0-9]") ~= nil then
