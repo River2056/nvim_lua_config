@@ -30,6 +30,9 @@ ln -sf ~/nvim_lua_config/ftplugin/ps1.lua ~/.config/nvim/ftplugin/ps1.lua
 
 ln -sf ~/nvim_lua_config/lua/kevin/init.lua ~/.config/nvim/lua/kevin/init.lua
 ln -sf ~/nvim_lua_config/lua/kevin/constants.lua ~/.config/nvim/lua/kevin/constants.lua
+ln -sf ~/nvim_lua_config/lua/kevin/tokyonight.lua ~/.config/nvim/lua/kevin/tokyonight.lua
+ln -sf ~/nvim_lua_config/lua/kevin/lualine.lua ~/.config/nvim/lua/kevin/lualine.lua
+
 ln -sf ~/nvim_lua_config/lua/abbreviations.lua ~/.config/nvim/lua/abbreviations.lua
 ln -sf ~/nvim_lua_config/lua/augroups.lua ~/.config/nvim/lua/augroups.lua
 ln -sf ~/nvim_lua_config/lua/base.lua ~/.config/nvim/lua/base.lua

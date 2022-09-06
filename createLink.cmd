@@ -5,7 +5,6 @@ mkdir C:\Users\H0268\AppData\Local\nvim\ftplugin
 mkdir C:\Users\H0268\AppData\Local\nvim\plugin
 
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\harpoon.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\harpoon.rc.lua
-mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\lualine.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\lualine.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\neogit.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\neogit.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\nvim-cmp.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\nvim-cmp.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\nvim-dap-ui.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\nvim-dap-ui.rc.lua
@@ -28,6 +27,9 @@ mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\ps1.lua C:\Users\H0268\Documen
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua
+mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\tokyonight.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\tokyonight.lua
+mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\lualine.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\lualine.lua
+
 mklink C:\Users\H0268\AppData\Local\nvim\lua\abbreviations.lua C:\Users\H0268\Documents\nvim_lua_config\lua\abbreviations.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\augroups.lua C:\Users\H0268\Documents\nvim_lua_config\lua\augroups.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\base.lua C:\Users\H0268\Documents\nvim_lua_config\lua\base.lua
