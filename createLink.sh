@@ -41,6 +41,6 @@ ln -sf ~/nvim_lua_config/lua/utils.lua ~/.config/nvim/lua/utils.lua
 ln -sf ~/nvim_lua_config/lua/windows.lua ~/.config/nvim/lua/windows.lua
 
 ln -sf ~/nvim_lua_config/plugin/lspconfig.lua ~/.config/nvim/plugin/lspconfig.lua
-ln -sf ~/nvim_lua_config/plugin/plugin/null-ls.rc.lua ~/.config/nvim/plugin/null-ls.rc.lua
+ln -sf ~/nvim_lua_config/plugin/null-ls.rc.lua ~/.config/nvim/plugin/null-ls.rc.lua
 
 ln -sf ~/nvim_lua_config/init.lua ~/.config/nvim/init.lua
