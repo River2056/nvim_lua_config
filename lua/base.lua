@@ -28,7 +28,8 @@ vim.opt.hidden = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme gruvbox-baby]])
+-- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd([[colorscheme tokyonight]])
 --[[ vim.g.tokyonight_transparent_sidebar = true
 vim.g.tokyonight_transparent = true ]]

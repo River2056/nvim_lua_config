@@ -1,6 +1,7 @@
 require("kevin")
 require("plugins")
 require("kevin.tokyonight")
+require("kevin.gruvbox-baby")
 require("kevin.lualine")
 require("base")
 require("maps")

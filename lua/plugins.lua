@@ -82,4 +82,5 @@ packer.startup(function(use)
     -- colorschemes
     use("folke/tokyonight.nvim")
     use("morhetz/gruvbox")
+    use("luisiacc/gruvbox-baby")
 end)

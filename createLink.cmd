@@ -28,6 +28,7 @@ mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\ps1.lua C:\Users\H0268\Documen
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\tokyonight.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\tokyonight.lua
+mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\gruvbox-baby.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\gruvbox-baby.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\lualine.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\lualine.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\abbreviations.lua C:\Users\H0268\Documents\nvim_lua_config\lua\abbreviations.lua

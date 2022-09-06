@@ -28,6 +28,7 @@ New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\init.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\init.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\constants.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\constants.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\tokyonight.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\tokyonight.lua
+New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\gruvbox-baby.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\gruvbox-baby.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\kevin\lualine.lua -Target C:\Users\User\nvim_lua_config\lua\kevin\lualine.lua
 
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\lua\abbreviations.lua -Target C:\Users\User\nvim_lua_config\lua\abbreviations.lua
