@@ -112,7 +112,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms2g",
+        "Xms4g",
         "-Xms100m",
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
