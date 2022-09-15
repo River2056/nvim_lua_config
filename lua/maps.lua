@@ -15,6 +15,9 @@ keymap.set("n", "<Leader>sv", ":source $MYVIMRC<Return>")
 keymap.set("n", "<Leader>o", ":Ex<Return>")
 keymap.set("n", "<Leader><Space>", ":noh<Return>")
 keymap.set("n", "<Leader>q", ":q<Return>")
+-- paste stuff from previously copied
+keymap.set("v", "<Leader>p", '"_dP')
+keymap.set("n", "<Leader>mk", ":mksession! temp.vim<Return>")
 
 -- delete char don't go into clipboard
 keymap.set("n", "x", '"_x')

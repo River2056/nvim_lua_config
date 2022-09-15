@@ -63,8 +63,8 @@ local on_attach = function(client, bufnr)
 
     -- Doc popup scrolling
     buf_set_keymap("n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-    buf_set_keymap("n", "<C-1>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
-    buf_set_keymap("n", "<C-0>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+    buf_set_keymap("n", "L", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
+    buf_set_keymap("n", "H", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
 
     -- codeaction
     buf_set_keymap("n", "<leader>ac", "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", opts)
