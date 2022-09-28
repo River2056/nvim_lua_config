@@ -12,6 +12,8 @@ packer.startup(function(use)
     use("kyazdani42/nvim-tree.lua")
     use("kyazdani42/nvim-web-devicons") -- File icons
     use("nvim-telescope/telescope.nvim")
+    use("nvim-telescope/telescope-ui-select.nvim")
+    use("nvim-telescope/telescope-file-browser.nvim")
     use("norcalli/nvim-colorizer.lua")
     use("kylechui/nvim-surround")
     use("b3nj5m1n/kommentary")
@@ -71,7 +73,6 @@ packer.startup(function(use)
 
     use("mfussenegger/nvim-jdtls")
     use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-    use("nvim-telescope/telescope-ui-select.nvim")
     -- Debugging
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")

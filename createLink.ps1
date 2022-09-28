@@ -14,6 +14,7 @@ New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plu
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\nvim-treesitter.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\nvim-treesitter.rc.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\telescope-ui-select.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\telescope-ui-select.rc.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\telescope.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\telescope.rc.lua
+New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\telescope-file-browser.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\telescope-file-browser.rc.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\rest.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\rest.rc.lua
 
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\java.lua -Target C:\Users\User\nvim_lua_config\ftplugin\java.lua
