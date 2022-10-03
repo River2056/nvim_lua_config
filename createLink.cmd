@@ -25,6 +25,8 @@ mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\vue.lua C:\Users\H0268\Documen
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\go.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\go.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\kotlin.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\kotlin.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\ps1.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\ps1.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\c.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\c.lua
+mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\cpp.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\cpp.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\init.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\init.lua
 mklink C:\Users\H0268\AppData\Local\nvim\lua\kevin\constants.lua C:\Users\H0268\Documents\nvim_lua_config\lua\kevin\constants.lua

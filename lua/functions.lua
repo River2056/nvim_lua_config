@@ -19,10 +19,10 @@ function compileRun()
     elseif filetype == "go" then
         vim.cmd("!go run " .. path .. "<cr>")
     elseif filetype == "c" then
-        local filename = path:sub(1, #path - 1)
+        local filename = path:sub(1, #path - 2)
         vim.cmd("!gcc " .. path .. " -o " .. filename .. " && " .. filename .. ".exe")
     elseif filetype == "cpp" then
-        local filename = path:sub(1, #path - 3)
+        local filename = path:sub(1, #path - 4)
         vim.cmd("!g++ " .. path .. " -o " .. filename .. " && " .. filename .. ".exe")
     elseif filetype == "rust" then
         local filename = path:sub(1, #path - 4)
