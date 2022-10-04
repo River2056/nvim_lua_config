@@ -16,6 +16,7 @@ mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope-ui-select.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\telescope.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\telescope-file-browser.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\telescope-file-browser.rc.lua
 mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\rest.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\rest.rc.lua
+mklink C:\Users\H0268\AppData\Local\nvim\after\plugin\symbols-outline.rc.lua C:\Users\H0268\Documents\nvim_lua_config\after\plugin\symbols-outline.rc.lua
 
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\java.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\java.lua
 mklink C:\Users\H0268\AppData\Local\nvim\ftplugin\python.lua C:\Users\H0268\Documents\nvim_lua_config\ftplugin\python.lua

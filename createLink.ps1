@@ -16,6 +16,7 @@ New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plu
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\telescope.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\telescope.rc.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\telescope-file-browser.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\telescope-file-browser.rc.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\rest.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\rest.rc.lua
+New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\after\plugin\symbols-outline.rc.lua -Target C:\Users\User\nvim_lua_config\after\plugin\symbols-outline.rc.lua
 
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\java.lua -Target C:\Users\User\nvim_lua_config\ftplugin\java.lua
 New-Item -ItemType SymbolicLink -Path C:\Users\User\AppData\Local\nvim\ftplugin\python.lua -Target C:\Users\User\nvim_lua_config\ftplugin\python.lua

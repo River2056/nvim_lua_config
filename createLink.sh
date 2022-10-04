@@ -19,6 +19,8 @@ ln -sf ~/nvim_lua_config/after/plugin/nvim-treesitter.rc.lua ~/.config/nvim/afte
 ln -sf ~/nvim_lua_config/after/plugin/telescope-ui-select.rc.lua ~/.config/nvim/after/plugin/telescope-ui-select.rc.lua
 ln -sf ~/nvim_lua_config/after/plugin/telescope.rc.lua ~/.config/nvim/after/plugin/telescope.rc.lua
 ln -sf ~/nvim_lua_config/after/plugin/telescope-file-browser.rc.lua ~/.config/nvim/after/plugin/telescope-file-browser.rc.lua
+ln -sf ~/nvim_lua_config/after/plugin/rest.rc.lua ~/.config/nvim/after/plugin/rest.rc.lua
+ln -sf ~/nvim_lua_config/after/plugin/symbols-outline.rc.lua ~/.config/nvim/after/plugin/symbols-outline.rc.lua
 
 ln -sf ~/nvim_lua_config/ftplugin/java.lua ~/.config/nvim/ftplugin/java.lua
 ln -sf ~/nvim_lua_config/ftplugin/python.lua ~/.config/nvim/ftplugin/python.lua

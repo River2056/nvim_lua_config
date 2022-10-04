@@ -59,3 +59,4 @@ vim.keymap.set("n", "<Leader>fg", '<cmd>lua require("telescope.builtin").live_gr
 vim.keymap.set("n", "<Leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>')
 vim.keymap.set("n", "<Leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>')
 vim.keymap.set("n", "<Leader>fr", '<cmd>lua require("telescope.builtin").oldfiles()<cr>')
+vim.keymap.set("n", "<Leader>fs", '<cmd>lua require("telescope.builtin").lsp_document_symbols()<cr>')
