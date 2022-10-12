@@ -78,7 +78,8 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<Leader>gs", ":Neogit<Return>")
 keymap.set("n", "<Leader>dg", ":diffget<Return>")
 
--- Telescope
+-- terminal
+keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- autopairs
 vim.g.AutoPairs = {
