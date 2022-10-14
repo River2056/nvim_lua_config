@@ -6,6 +6,9 @@ vim.g.mapleader = " "
 -- quick escape from insert mode
 keymap.set("i", "jk", "<Escape>")
 keymap.set("i", "kj", "<Escape>")
+-- terminal
+keymap.set("t", "jk", "<C-\\><C-n>")
+keymap.set("t", "kj", "<C-\\><C-n>")
 
 keymap.set("n", "<Leader>aa", ":%y+<Return>")
 keymap.set("n", "<Leader>ss", ":w<Return>")
@@ -15,6 +18,7 @@ keymap.set("n", "<Leader>sv", ":source $MYVIMRC<Return>")
 keymap.set("n", "<Leader>o", ":Ex<Return>")
 keymap.set("n", "<Leader><Space>", ":noh<Return>")
 keymap.set("n", "<Leader>q", ":q<Return>")
+keymap.set("n", "<Leader>zq", ":bd!<Return>")
 -- paste stuff from previously copied
 keymap.set("v", "<Leader>p", '"_dP')
 keymap.set("n", "<Leader>mk", ":mksession! temp.vim<Return>")
@@ -77,9 +81,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Neogit
 keymap.set("n", "<Leader>gs", ":Neogit<Return>")
 keymap.set("n", "<Leader>dg", ":diffget<Return>")
-
--- terminal
-keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 -- autopairs
 vim.g.AutoPairs = {

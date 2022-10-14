@@ -62,7 +62,7 @@ function openTerminal()
     else
         vim.cmd("split term://bash")
     end
-    vim.cmd("resize 10")
+    vim.cmd("resize 20")
 end
 
 vim.keymap.set("n", "<Leader>`", ":lua openTerminal()<Return>")
