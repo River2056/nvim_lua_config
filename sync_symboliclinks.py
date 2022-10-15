@@ -37,6 +37,9 @@ def main():
                         target_link_destination = os.path.join(path.replace(config_files_path, nvim_system_path), f)
                         if not os.path.exists(target_link_destination):
                             print(f"symbolic link not found: {target_link_destination}, creating...")
+                            # check for target directory exists...
+                            if not os.path.exists(path.replace(config_files_path, nvim_system_path)):
+                                os.makedirs(path.replace(config_files_path, nvim_system_path))
                             os.symlink(os.path.join(path, f), target_link_destination)
                 else:
                     # create dir, then make symboliclink
@@ -49,7 +52,9 @@ def main():
                             os.symlink(os.path.join(path, f), target_link_destination)
 
     print("Done syncing symbolic links")
-
+    print("checking if init.lua link exists...")
+    if not os.path.exists(os.path.join(nvim_system_path, "init.lua")):
+        os.symlink(os.path.join(config_files_path, "init.lua"), os.path.join(nvim_system_path, "init.lua"))
 
 if __name__ == "__main__":
     main()

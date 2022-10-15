@@ -84,7 +84,7 @@ local on_attach = function(client, bufnr)
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function()
-                vim.lsp.buf.formatting_seq_sync()
+                vim.lsp.buf.format()
             end,
         })
     end
@@ -146,7 +146,7 @@ protocol.CompletionItemKind = {
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 lsp_installer.on_server_ready(function(server)
     -- the keymaps, flags and capabilities that will be sent to the server as

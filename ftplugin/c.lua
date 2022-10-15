@@ -1,5 +1,5 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local on_attach = function(client, bufnr)
     -- Create some shortcut functions.
@@ -59,7 +59,7 @@ local on_attach = function(client, bufnr)
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function()
-                vim.lsp.buf.formatting_seq_sync()
+                vim.lsp.buf.format()
             end,
         })
     end

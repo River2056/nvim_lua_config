@@ -77,7 +77,7 @@ packer.startup(function(use)
     -- Debugging
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
-    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use({ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" })
     use({ "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } })
     use("andreshazard/vim-freemarker")
 

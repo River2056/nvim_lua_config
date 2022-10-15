@@ -114,8 +114,13 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
+<<<<<<< Updated upstream
         "-Xms4g",
         "-Xms100m",
+=======
+        "-Xms4G",
+        "-Xms1G",
+>>>>>>> Stashed changes
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
         "-XX:+UseParallelGC",
