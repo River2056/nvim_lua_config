@@ -26,8 +26,20 @@ local function lsp_keymaps(bufnr)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_declarations<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "L", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>", opts)
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "H", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>", opts)
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "L",
+        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<CR>",
+        opts
+    )
+    vim.api.nvim_buf_set_keymap(
+        bufnr,
+        "n",
+        "H",
+        "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<CR>",
+        opts
+    )
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gI", "<cmd>Telescope lsp_implementations<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
@@ -114,13 +126,8 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-<<<<<<< Updated upstream
         "-Xms4g",
         "-Xms100m",
-=======
-        "-Xms4G",
-        "-Xms1G",
->>>>>>> Stashed changes
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
         "-XX:+UseParallelGC",
