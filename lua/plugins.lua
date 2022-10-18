@@ -83,6 +83,7 @@ packer.startup(function(use)
 
     -- colorschemes
     use("folke/tokyonight.nvim")
-    use("morhetz/gruvbox")
+    -- use("morhetz/gruvbox")
+    use({ "ellisonleao/gruvbox.nvim" })
     use("luisiacc/gruvbox-baby")
 end)
