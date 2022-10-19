@@ -71,13 +71,10 @@ local function on_attach(client, bufnr)
         })
     end
 
-    if client.name == "jdt.ls" then
-        vim.lsp.codelens.refresh()
-        if JAVA_DAP_ACTIVE then
-            require("jdtls").setup_dap({ hotcodereplace = "auto" })
-            require("jdtls.dap").setup_dap_main_class_configs()
-        end
-    end
+    vim.lsp.codelens.refresh()
+    require("jdtls").setup_dap({ hotcodereplace = "auto" })
+    require("jdtls.dap").setup_dap_main_class_configs()
+    require("jdtls.setup").add_commands()
 end
 
 if vim.fn.has("mac") == 1 then
@@ -222,10 +219,6 @@ local config = {
     },
 }
 
--- This starts a new client & server,
--- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
-
 vim.keymap.set("n", "<A-o>", '<Cmd>lua require"jdtls".organize_imports()<CR>')
 -- vim.keymap.set("n", "crv", '<Cmd>lua require("jdtls").extract_variable()<CR>')
 vim.keymap.set("v", "crv", '<Esc><Cmd>lua require("jdtls").extract_variable(true)<CR>')
@@ -259,3 +252,7 @@ vim.cmd(
 )
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
+
+-- This starts a new client & server,
+-- or attaches to an existing client & server depending on the `root_dir`.
+require("jdtls").start_or_attach(config)
