@@ -23,7 +23,6 @@ def main():
     if system_platform == "Windows":
         print("Platform Windows, use Windows settings...")
         for dirpath, _, _ in os.walk(os.path.join("C:\\", "Users")):
-
             if re.search(r".*AppData.Local.nvim.*", dirpath):
                 print(f"nvim system path: {dirpath}")
                 nvim_system_path = dirpath
