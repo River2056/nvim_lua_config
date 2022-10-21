@@ -30,7 +30,10 @@ def main():
                 break
     else:
         print("Non Windows, using Linux/Mac settings...")
-        nvim_system_path = "~/.config/nvim"
+        for dirpath, _, _ in os.walk("/"):
+            if re.search(r"/.config/nvim", dirpath):
+                nvim_system_path = dirpath
+                break
 
     for path, _, files in nvim_config_files:
         if not re.search(r"\.git", path):
@@ -74,9 +77,6 @@ def main():
             os.path.join(config_files_path, "init.lua"),
             os.path.join(nvim_system_path, "init.lua"),
         )
-
-
-
 
     print("All done!")
 
