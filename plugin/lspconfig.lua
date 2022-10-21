@@ -1,8 +1,6 @@
-local handler = require("kevin.lspHandler")
+local lsp = require("kevin.lsp")
 local nvim_lsp = require("lspconfig")
 local util = require("lspconfig.util")
--- local lsp_installer = require("nvim-lsp-installer")
-
 local protocol = require("vim.lsp.protocol")
 
 protocol.CompletionItemKind = {
@@ -57,9 +55,18 @@ vim.diagnostic.config({
 	},
 })
 
+-- common lsp configs
+for _, server in ipairs(lsp.servers) do
+	nvim_lsp[server].setup({
+		on_attach = lsp.on_attach,
+		capabilities = lsp.capabilities,
+	})
+end
+
+-- specific additional configs per language
 nvim_lsp.sumneko_lua.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
 	settings = {
 		Lua = {
 			diagnostics = {
@@ -76,34 +83,9 @@ nvim_lsp.sumneko_lua.setup({
 	},
 })
 
-nvim_lsp.gopls.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.bashls.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.pyright.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.html.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.jsonls.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
 nvim_lsp.tsserver.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
 	filetypes = {
 		"javascript",
 		"javascriptreact",
@@ -114,34 +96,4 @@ nvim_lsp.tsserver.setup({
 	},
 	cmd = { "typescript-language-server.cmd", "--stdio" },
 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
-})
-
-nvim_lsp.vuels.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.emmet_ls.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.kotlin_language_server.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.powershell_es.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.ccls.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
-})
-
-nvim_lsp.cmake.setup({
-	on_attach = handler.on_attach,
-	capabilities = handler.capabilities,
 })

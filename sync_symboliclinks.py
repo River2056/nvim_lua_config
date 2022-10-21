@@ -69,10 +69,16 @@ def main():
     print("Done syncing symbolic links")
     print("checking if init.lua link exists...")
     if not os.path.exists(os.path.join(nvim_system_path, "init.lua")):
+        print("init.lua symbolic link not found, creating...")
         os.symlink(
             os.path.join(config_files_path, "init.lua"),
             os.path.join(nvim_system_path, "init.lua"),
         )
+
+
+
+
+    print("All done!")
 
 
 if __name__ == "__main__":

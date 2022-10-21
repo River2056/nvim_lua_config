@@ -66,4 +66,20 @@ function M.on_attach(client, bufnr)
 	end
 end
 
+M.servers = {
+	"bashls",
+	"pyright",
+	"sumneko_lua",
+	"html",
+	"tsserver",
+	"jsonls",
+	"vuels",
+	"gopls",
+	"golangci_lint_ls",
+	"emmet_ls",
+	"kotlin_language_server",
+	"powershell_es",
+	"sqlls",
+}
+
 return M
