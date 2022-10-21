@@ -20,19 +20,22 @@ def main():
     print(f"platform: {system_platform}")
 
     # figure out platform and search for nvim installation path
+    path_to_search = ""
+    path_pattern = ""
     if system_platform == "Windows":
         print("Platform Windows, use Windows settings...")
-        for dirpath, _, _ in os.walk(os.path.join("C:\\", "Users")):
-            if re.search(r".*AppData.Local.nvim.*", dirpath):
-                print(f"nvim system path: {dirpath}")
-                nvim_system_path = dirpath
-                break
+        path_to_search = os.path.join("C:\\", "Users")
+        path_pattern = r".*AppData.Local.nvim.*"
     else:
         print("Non Windows, using Linux/Mac settings...")
-        for dirpath, _, _ in os.walk("/"):
-            if re.search(r"/.config/nvim", dirpath):
-                nvim_system_path = dirpath
-                break
+        path_to_search = "/"
+        path_pattern = r"/.config/nvim"
+
+    for dirpath, _, _ in os.walk(path_to_search):
+        if re.search(path_pattern, dirpath):
+            print(f"nvim system path: {dirpath}")
+            nvim_system_path = dirpath
+            break
 
     for path, _, files in nvim_config_files:
         if not re.search(r"\.git", path):
@@ -76,8 +79,10 @@ def main():
             os.path.join(config_files_path, "init.lua"),
             os.path.join(nvim_system_path, "init.lua"),
         )
-
+    print("done linking init.lua")
     print("All done!")
+
+
 
 
 if __name__ == "__main__":

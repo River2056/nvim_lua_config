@@ -1,3 +1,4 @@
+local c = require("kevin.constants")
 local lsp = require("kevin.lsp")
 local nvim_lsp = require("lspconfig")
 local util = require("lspconfig.util")
@@ -96,4 +97,18 @@ nvim_lsp.tsserver.setup({
 	},
 	cmd = { "typescript-language-server.cmd", "--stdio" },
 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
+})
+
+nvim_lsp.ccls.setup({
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
+})
+
+nvim_lsp.cmake.setup({
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
+})
+
+nvim_lsp.powershell_es.setup({
+    bundle_path = c.powershell_es_path
 })
