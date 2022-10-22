@@ -99,16 +99,17 @@ nvim_lsp.tsserver.setup({
 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
 })
 
+nvim_lsp.cmake.setup({
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
+	cmd = { "cmake-language-server.cmd" },
+})
+
 nvim_lsp.ccls.setup({
 	on_attach = lsp.on_attach,
 	capabilities = lsp.capabilities,
 })
 
-nvim_lsp.cmake.setup({
-	on_attach = lsp.on_attach,
-	capabilities = lsp.capabilities,
-})
-
 nvim_lsp.powershell_es.setup({
-    bundle_path = c.powershell_es_path
+	bundle_path = c.powershell_es_path,
 })
