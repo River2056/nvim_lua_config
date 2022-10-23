@@ -58,10 +58,27 @@ vim.diagnostic.config({
 
 -- common lsp configs
 for _, server in ipairs(lsp.servers) do
-	nvim_lsp[server].setup({
+	local opts = {
 		on_attach = lsp.on_attach,
 		capabilities = lsp.capabilities,
-	})
+	}
+
+	-- non linux/mac system, will return \ or \\
+	if package.config:sub(1, 1) ~= "/" then
+		if server == "cmake" then
+			opts["cmd"] = { "cmake-language-server.cmd" }
+		end
+
+		if server == "kotlin_language_server" then
+			opts["cmd"] = { "kotlin-language-server.cmd" }
+		end
+
+		if server == "powershell_es" then
+			opts = { bundle_path = c.powershell_es_path }
+		end
+	end
+
+	nvim_lsp[server].setup(opts)
 end
 
 -- specific additional configs per language
@@ -99,17 +116,8 @@ nvim_lsp.tsserver.setup({
 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
 })
 
-nvim_lsp.cmake.setup({
-	on_attach = lsp.on_attach,
-	capabilities = lsp.capabilities,
-	cmd = { "cmake-language-server.cmd" },
-})
-
+-- servers that lspconfig supports but mason doesn't have
 nvim_lsp.ccls.setup({
 	on_attach = lsp.on_attach,
 	capabilities = lsp.capabilities,
-})
-
-nvim_lsp.powershell_es.setup({
-	bundle_path = c.powershell_es_path,
 })
