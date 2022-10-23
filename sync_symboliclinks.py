@@ -80,13 +80,7 @@ def main():
             os.path.join(nvim_system_path, "init.lua"),
         )
     print("done linking init.lua")
-    print("All done!"   )
-
-
-
-
-
-
+    print("All done!")
 
 
 if __name__ == "__main__":
