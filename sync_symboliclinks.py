@@ -37,6 +37,7 @@ def main():
             nvim_system_path = dirpath
             break
 
+    # search through config files and ignore .git directory
     for path, _, files in nvim_config_files:
         if not re.search(r"\.git", path):
             if files:
