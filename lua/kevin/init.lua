@@ -40,5 +40,5 @@ local path = os.getenv("path")
 local mason_lsp_install_path = vim.fn.stdpath("data") .. file_seperator .. "mason" .. file_seperator .. "bin"
 if path ~= nil and not path:find(mason_lsp_install_path, 1, true) then
 	print("Mason LSP install path not added to PATH")
-	print("please add: " .. mason_lsp_install_path .. " to PATH for config to work properly")
+	print("please add: " .. mason_lsp_install_path .. " to PATH for lspconfig to work properly")
 end
