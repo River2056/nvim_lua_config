@@ -80,7 +80,8 @@ M.servers = {
 	"kotlin_language_server",
 	"powershell_es",
 	"sqlls",
-    "cmake",
+	"cmake",
+	"yamlls",
 }
 
 return M
