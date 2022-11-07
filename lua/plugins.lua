@@ -19,6 +19,8 @@ packer.startup(function(use)
 	use("kylechui/nvim-surround")
 	use("b3nj5m1n/kommentary")
 	use("ThePrimeagen/harpoon")
+
+	-- neogit
 	use({
 		"TimUntersberger/neogit",
 		requires = {
@@ -26,6 +28,8 @@ packer.startup(function(use)
 			"sindrets/diffview.nvim",
 		},
 	})
+	use("f-person/git-blame.nvim")
+
 	use("vim-scripts/auto-pairs-gentle") -- bracket autocompletion
 
 	-- Fancier statusline
