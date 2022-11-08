@@ -81,22 +81,29 @@ function isdir(path)
 	return exists(path .. "/")
 end
 
-function exportGitBlame()
+-- local directory = vim.fn.getcwd()
+--[[ function exportGitBlame()
 	local path = vim.fn.expand("%")
-	local export_filename = path:gsub("\\", "_"):gsub("/", "_"):gsub(":", "_") .. ".txt"
-	local directory = vim.fn.getcwd()
+	local export_filename = path:gsub("\\", "_"):gsub("/", "_"):gsub(":", "_") .. os.time() .. ".txt"
 
-	local cmd = "git blame " .. path .. " > " .. ".gitblame/" .. export_filename
+	local cmd = "git blame "
+		.. path:gsub("\\", "/")
+		.. " > "
+		.. directory:gsub("\\", "/")
+		.. "/"
+		-- .. "/.gitblame/"
+		.. export_filename
 
 	-- check .gitblame/
 	local is_exists = isdir(directory .. "/.gitblame")
 	if is_exists == nil then
-		cmd = "!mkdir .gitblame && " .. cmd
+		cmd = "!mkdir -p " .. directory:gsub("\\", "/") .. "/.gitblame/ && " .. cmd
 	else
 		cmd = "!" .. cmd
 	end
+	cmd = "!" .. cmd
 
 	vim.cmd(cmd)
-end
+end ]]
 
-vim.keymap.set("n", "<Leader>go", ":lua exportGitBlame()<Return>")
+vim.keymap.set("n", "<Leader>go", ":!git blame % > %<.txt<Return>")
