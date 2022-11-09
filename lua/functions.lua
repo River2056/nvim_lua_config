@@ -106,4 +106,9 @@ end
 	vim.cmd(cmd)
 end ]]
 
-vim.keymap.set("n", "<Leader>go", ":!git blame % > %<.txt<Return>")
+function exportGitBlame()
+	local cmd = "!git blame % > %<" .. os.time() .. ".txt"
+	vim.cmd(cmd)
+end
+
+vim.keymap.set("n", "<Leader>go", ":lua exportGitBlame()<Return>")
