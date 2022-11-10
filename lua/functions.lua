@@ -1,3 +1,7 @@
+local function t(str)
+	return vim.api.nvim_replace_termcodes(str, true, true, true)
+end
+
 function compileRun()
 	vim.cmd('exec "w"')
 
@@ -67,7 +71,7 @@ end
 
 vim.keymap.set("n", "<Leader>`", ":lua openTerminal()<Return>")
 
-function exists(file)
+local function exists(file)
 	local ok, _, code = os.rename(file, file)
 	if not ok then
 		if code == 13 then
@@ -77,7 +81,7 @@ function exists(file)
 	return ok
 end
 
-function isdir(path)
+local function isdir(path)
 	return exists(path .. "/")
 end
 
@@ -112,3 +116,10 @@ function exportGitBlame()
 end
 
 vim.keymap.set("n", "<Leader>go", ":lua exportGitBlame()<Return>")
+
+function formatJson()
+	vim.bo.filetype = "json"
+	vim.cmd(t("normal gg<S-v>G:!jq<cr>"))
+end
+
+vim.keymap.set("n", "<Leader>jq", ":lua formatJson()<Return>")

@@ -29,7 +29,6 @@ packer.startup(function(use)
 		},
 	})
 	use("f-person/git-blame.nvim")
-
 	use("vim-scripts/auto-pairs-gentle") -- bracket autocompletion
 
 	-- Fancier statusline
@@ -43,7 +42,10 @@ packer.startup(function(use)
 
 	-- LSP Client
 	use("neovim/nvim-lspconfig")
-
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
 	-- Language Server installer
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
