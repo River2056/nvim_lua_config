@@ -71,10 +71,10 @@ local function on_attach(client, bufnr)
 		})
 	end
 
-	vim.lsp.codelens.refresh()
 	require("jdtls").setup_dap({ hotcodereplace = "auto" })
 	require("jdtls.dap").setup_dap_main_class_configs()
 	require("jdtls.setup").add_commands()
+	vim.lsp.codelens.refresh()
 end
 
 if vim.fn.has("mac") == 1 then
@@ -233,17 +233,6 @@ vim.keymap.set("n", "<Leader>dn", '<Cmd>lua require"jdtls".test_nearest_method()
 vim.keymap.set("n", "<F1>", ":DapContinue<CR>")
 vim.keymap.set("n", "<Leader>de", ":DapTerminate<CR>")
 
-local dap = require("dap")
-dap.configurations.java = {
-	{
-		type = "java",
-		request = "attach",
-		name = "Debug (Attach) - Remote",
-		hostName = "127.0.0.1",
-		port = c.jdtls_debug_port,
-	},
-}
-
 vim.cmd(
 	"command! -buffer -nargs=? -complete=custom,v:lua.require'jdtls'._complete_compile JdtCompile lua require('jdtls').compile(<f-args>)"
 )
@@ -252,6 +241,18 @@ vim.cmd(
 )
 vim.cmd("command! -buffer JdtUpdateConfig lua require('jdtls').update_project_config()")
 vim.cmd("command! -buffer JdtBytecode lua require('jdtls').javap()")
+
+local dap = require("dap")
+dap.configurations.java = {
+	{
+		type = "java",
+		request = "attach",
+		name = "Debug (Attach) - Remote",
+		hostName = "127.0.0.1",
+		port = c.jdtls_debug_port,
+		javaExec = c.jdtls_java_path,
+	},
+}
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
