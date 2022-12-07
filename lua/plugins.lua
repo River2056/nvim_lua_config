@@ -99,4 +99,11 @@ packer.startup(function(use)
 			vim.fn["mkdp#util#install"]()
 		end,
 	})
+	use({
+		"scalameta/nvim-metals",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"mfussenegger/nvim-dap",
+		},
+	})
 end)
