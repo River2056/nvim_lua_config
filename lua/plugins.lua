@@ -106,4 +106,5 @@ packer.startup(function(use)
 			"mfussenegger/nvim-dap",
 		},
 	})
+	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
 end)
