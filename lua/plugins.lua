@@ -50,6 +50,7 @@ packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+	use("MunifTanjim/prettier.nvim")
 
 	-- Customizations over LSP
 	-- Show VSCode-esque pictograms
