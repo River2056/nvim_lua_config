@@ -137,10 +137,10 @@ local config = {
 		"-javaagent:" .. lombok_path,
 
 		"-jar",
-		vim.fn.glob(home .. "/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
+		vim.fn.glob("/root/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
 
 		"-configuration",
-		home .. "/jdtls/config_" .. configuration,
+		"/root/.local/share/nvim/mason/packages/jdtls/config_" .. configuration,
 
 		"-data",
 		workspace_dir,
@@ -171,10 +171,10 @@ local config = {
 						name = "JavaSE-17",
 						path = c.jdtls_jdk17_path,
 					},
-					{
+					--[[ {
 						name = "JavaSE-1.8",
 						path = c.jdtls_jdk8_path,
-					},
+					}, ]]
 				},
 			},
 			maven = {
