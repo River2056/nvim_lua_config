@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\auto-pairs-gentle",
     url = "https://github.com/vim-scripts/auto-pairs-gentle"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim",
+    wants = { "nvim-web-devicons" }
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-buffer",
@@ -258,6 +264,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["rest.nvim"] = {
     loaded = true,
