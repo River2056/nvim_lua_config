@@ -225,11 +225,14 @@ _G.packer_plugins = {
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+<<<<<<< HEAD
   ["nvim-metals"] = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-metals",
     url = "https://github.com/scalameta/nvim-metals"
   },
+=======
+>>>>>>> dd89a7d (+ added work branch)
   ["nvim-surround"] = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-surround",
@@ -265,11 +268,14 @@ _G.packer_plugins = {
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+<<<<<<< HEAD
   ["prettier.nvim"] = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+=======
+>>>>>>> dd89a7d (+ added work branch)
   ["rest.nvim"] = {
     loaded = true,
     path = "C:\\Users\\H0268\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rest.nvim",
