@@ -63,7 +63,9 @@ vim.keymap.set("n", "<Leader>cc", ":lua changeCase()<Return>")
 function openTerminal()
 	if vim.fn.has("win32") then
 		vim.cmd("split term://powershell")
-	else
+	elseif vim.fn.has("mac") then
+		vim.cmd("split term://zsh")
+    else
 		vim.cmd("split term://bash")
 	end
 	vim.cmd("resize 20")
