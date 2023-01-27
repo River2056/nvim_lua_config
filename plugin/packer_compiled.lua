@@ -79,6 +79,12 @@ _G.packer_plugins = {
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/auto-pairs-gentle",
     url = "https://github.com/vim-scripts/auto-pairs-gentle"
   },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim",
+    wants = { "nvim-web-devicons" }
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -159,6 +165,11 @@ _G.packer_plugins = {
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -214,6 +225,11 @@ _G.packer_plugins = {
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-metals"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-metals",
+    url = "https://github.com/scalameta/nvim-metals"
+  },
   ["nvim-surround"] = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-surround",
@@ -229,6 +245,11 @@ _G.packer_plugins = {
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -243,6 +264,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["prettier.nvim"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/prettier.nvim",
+    url = "https://github.com/MunifTanjim/prettier.nvim"
   },
   ["rest.nvim"] = {
     loaded = true,
