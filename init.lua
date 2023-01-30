@@ -25,3 +25,5 @@ end
 if is_win then
 	require("windows")
 end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
