@@ -135,13 +135,13 @@ function open_nvim_tree(data)
 	end
 
 	-- create a new, empty buffer
-	vim.cmd.enew()
+	-- vim.cmd.enew()
 
 	-- wipe the directory buffer
-	vim.cmd.bw(data.buf)
+	-- vim.cmd.bw(data.buf)
 
 	-- change to the directory
-	vim.cmd.cd(data.file)
+	-- vim.cmd.cd(data.file)
 
 	-- open the tree
 	require("nvim-tree.api").tree.open()
