@@ -82,7 +82,7 @@ for _, server in ipairs(lsp.servers) do
 end
 
 -- specific additional configs per language
-nvim_lsp.sumneko_lua.setup({
+nvim_lsp.lua_ls.setup({
 	on_attach = lsp.on_attach,
 	capabilities = lsp.capabilities,
 	settings = {
