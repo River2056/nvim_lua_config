@@ -79,7 +79,7 @@ M.servers = {
 	"emmet_ls",
 	"kotlin_language_server",
 	"sqlls",
-	"cmake",
+	-- "cmake",
 	"yamlls",
 	"cssls",
 	"rust_analyzer",
