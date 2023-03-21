@@ -138,19 +138,15 @@ local config = {
 
 		"-jar",
 		vim.fn.glob("/root/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_*.jar"),
-
 		"-configuration",
 		"/root/.local/share/nvim/mason/packages/jdtls/config_" .. configuration,
 
 		"-data",
 		workspace_dir,
 	},
-
 	on_attach = on_attach,
 	capabilities = capabilities,
-
 	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" }),
-
 	settings = {
 		java = {
 			eclipse = {
@@ -206,7 +202,6 @@ local config = {
 			["java.format.settings.profile"] = "GoogleStyle",
 		},
 	},
-
 	-- Language server `initializationOptions`
 	-- You need to extend the `bundles` with paths to jar files
 	-- if you want to use additional eclipse.jdt.ls plugins.
