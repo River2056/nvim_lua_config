@@ -53,7 +53,7 @@ keymap.set("n", "<Leader>bn", ":bnext<Return>")
 keymap.set("n", "<Leader>bp", ":bprevious<Return>")
 keymap.set("n", "<Leader>bd", ":bdelete<Return>")
 keymap.set("n", "<Leader>bda", ":%bd<Bar>e#<Return>") -- delete all buffers except current
-keymap.set("n", "<Leader>ls", ":ls<Return>") -- list all buffers
+keymap.set("n", "<Leader>ls", ":ls<Return>")          -- list all buffers
 
 -- Split window
 keymap.set("n", "ss", ":split<Return><C-w>w")
@@ -65,10 +65,10 @@ keymap.set("", "<C-k>", "<C-w>k")
 keymap.set("", "<C-l>", "<C-w>l")
 
 -- Resize window
-keymap.set("n", "<M-h>", "<C-w><")
-keymap.set("n", "<M-l>", "<C-w>>")
-keymap.set("n", "<M-k>", "<C-w>+")
-keymap.set("n", "<M-j>", "<C-w>-")
+keymap.set("n", "˙", "<C-w><")
+keymap.set("n", "¬", "<C-w>>")
+keymap.set("n", "˚", "<C-w>+")
+keymap.set("n", "∆", "<C-w>-")
 
 -- Visual indent
 keymap.set("v", ">", ">gv")
@@ -84,13 +84,13 @@ keymap.set("n", "<Leader>dg", ":diffget<Return>")
 
 -- autopairs
 vim.g.AutoPairs = {
-	["("] = ")",
-	["["] = "]",
-	["{"] = "}",
-	["'"] = "'",
-	['"'] = '"',
-	["`"] = "`",
-	-- ["<"] = ">",
+    ["("] = ")",
+    ["["] = "]",
+    ["{"] = "}",
+    ["'"] = "'",
+    ['"'] = '"',
+    ["`"] = "`",
+    -- ["<"] = ">",
 }
 
 -- Markdown preview
