@@ -66,15 +66,11 @@ for _, server in ipairs(lsp.servers) do
 	-- non linux/mac system, will return \ or \\
 	if package.config:sub(1, 1) ~= "/" then
 		if server == "cmake" then
-			opts["cmd"] = { "cmake-language-server.cmd" }
+			opts["cmd"] = { "cmake-language-server" }
 		end
 
 		if server == "kotlin_language_server" then
-			opts["cmd"] = { "kotlin-language-server.cmd" }
-		end
-
-		if server == "powershell_es" then
-			opts = { bundle_path = c.powershell_es_path }
+			opts["cmd"] = { "kotlin-language-server" }
 		end
 	end
 
@@ -112,7 +108,7 @@ nvim_lsp.tsserver.setup({
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	cmd = { "typescript-language-server.cmd", "--stdio" },
+	cmd = { "typescript-language-server", "--stdio" },
 	root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
 })
 
