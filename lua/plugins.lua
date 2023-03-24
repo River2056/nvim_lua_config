@@ -108,4 +108,5 @@ packer.startup(function(use)
 		},
 	})
 	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
+	use("mbbill/undotree")
 end)
