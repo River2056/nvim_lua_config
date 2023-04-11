@@ -40,6 +40,8 @@ vim.keymap.set("n", "<Leader>r", ":lua compileRun()<Return>")
 
 -- run lua filter
 vim.keymap.set("v", "<Leader>r", ":'<,'>!lua<Return>")
+-- copy to clipboard from wsl
+vim.keymap.set("v", "<Leader>cp", ":'<,'>!clip.exe<Return>u")
 
 function changeCase()
 	word = vim.fn.expand("<cword>")
@@ -111,7 +113,6 @@ end
 
 	vim.cmd(cmd)
 end ]]
-
 function exportGitBlame()
 	local cmd = "!git blame % > %<" .. os.time() .. ".txt"
 	vim.cmd(cmd)
