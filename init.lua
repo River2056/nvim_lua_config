@@ -32,8 +32,8 @@ if is_linux then
 	require("linux")
 end
 
-if is_wsl then
+--[[ if is_wsl then
 	require("wsl")
-end
+end ]]
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
