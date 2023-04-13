@@ -1,4 +1,4 @@
-vim.opt.clipboard:prepend{"unnamedplus"}
+vim.opt.clipboard:prepend{"unnamedplus", "unnamed"}
 
 if vim.fn.has("wsl") == 1 then
 	vim.api.nvim_create_autocmd("TextYankPost", {
