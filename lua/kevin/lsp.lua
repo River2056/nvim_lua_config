@@ -69,7 +69,7 @@ end
 M.servers = {
     "bashls",
     "pyright",
-    "sumneko_lua",
+    "lua_ls",
     "html",
     "tsserver",
     "jsonls",
