@@ -84,13 +84,16 @@ keymap.set("n", "<Leader>dg", ":diffget<Return>")
 
 -- autopairs
 vim.g.AutoPairs = {
-    ["("] = ")",
-    ["["] = "]",
-    ["{"] = "}",
-    ["'"] = "'",
-    ['"'] = '"',
-    ["`"] = "`",
-    -- ["<"] = ">",
+	["("] = ")",
+	["["] = "]",
+	["{"] = "}",
+	["'"] = "'",
+	['"'] = '"',
+	["`"] = "`",
+	-- ["<"] = ">",
 }
+
+-- Markdown preview
+keymap.set("n", "<Leader>mp", "<Plug>MarkdownPreviewToggle")
 
 keymap.set("n", "<Leader>ll", "!love .")

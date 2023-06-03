@@ -16,10 +16,10 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 -- Determine OS
-local home = c.home
+local home = vim.fn.stdpath("data") .. "/mason/packages"
 local java_debug_path = c.java_debug_path
 local vscode_java_test_path = c.vscode_java_test_path
-local lombok_path = c.lombok_path
+local lombok_path = home .. "/jdtls/lombok.jar"
 
 local function lsp_keymaps(bufnr)
 	local opts = { noremap = true, silent = true }

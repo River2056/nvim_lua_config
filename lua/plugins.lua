@@ -50,6 +50,7 @@ packer.startup(function(use)
 	use("williamboman/mason.nvim")
 	use("williamboman/mason-lspconfig.nvim")
 	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+	use("MunifTanjim/prettier.nvim")
 
 	-- Customizations over LSP
 	-- Show VSCode-esque pictograms
@@ -91,4 +92,21 @@ packer.startup(function(use)
 	-- use("morhetz/gruvbox")
 	use({ "ellisonleao/gruvbox.nvim" })
 	use("luisiacc/gruvbox-baby")
+	use("windwp/nvim-ts-autotag")
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({
+		"scalameta/nvim-metals",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"mfussenegger/nvim-dap",
+		},
+	})
+	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
+	use("mbbill/undotree")
 end)

@@ -82,15 +82,15 @@ for _, server in ipairs(lsp.servers) do
 end
 
 -- specific additional configs per language
---[[ nvim_lsp.sumneko_lua.setup({
-    on_attach = lsp.on_attach,
-    capabilities = lsp.capabilities,
-    settings = {
-        Lua = {
-            diagnostics = {
-                -- Get the language server to recognize the `vim` global
-                globals = { "vim" },
-            },
+nvim_lsp.lua_ls.setup({
+	on_attach = lsp.on_attach,
+	capabilities = lsp.capabilities,
+	settings = {
+		Lua = {
+			diagnostics = {
+				-- Get the language server to recognize the `vim` global
+				globals = { "vim" },
+			},
 
             workspace = {
                 -- Make the server aware of Neovim runtime files
