@@ -99,7 +99,7 @@ nvim_lsp.lua_ls.setup({
             },
         },
     },
-}) ]]
+})
 
 nvim_lsp.tsserver.setup({
     on_attach = lsp.on_attach,
