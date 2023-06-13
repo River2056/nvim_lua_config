@@ -83,6 +83,7 @@ M.servers = {
 	"yamlls",
 	"cssls",
 	"rust_analyzer",
+    "marksman",
 }
 
 return M
