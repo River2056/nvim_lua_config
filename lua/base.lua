@@ -1,5 +1,6 @@
 local u = require("utils")
 
+vim.g.editorconfig = false
 vim.opt.compatible = false
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
