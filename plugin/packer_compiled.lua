@@ -275,6 +275,11 @@ _G.packer_plugins = {
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/rest.nvim",
     url = "https://github.com/NTBBloodbath/rest.nvim"
   },
+  ["sonarlint.nvim"] = {
+    loaded = true,
+    path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/sonarlint.nvim",
+    url = "https://gitlab.com/schrieveslaach/sonarlint.nvim"
+  },
   ["symbols-outline.nvim"] = {
     loaded = true,
     path = "/Users/tungchinchen/.local/share/nvim/site/pack/packer/start/symbols-outline.nvim",
