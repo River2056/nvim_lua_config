@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 
 local plugins = {
-    "nvim-lua/plenary.nvim",     -- Common utilities
+    "nvim-lua/plenary.nvim",        -- Common utilities
     "kyazdani42/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
