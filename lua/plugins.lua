@@ -1,122 +1,113 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+local status, packer = pcall(require, "packer")
+if not status then
+	print("Packer is not installed")
+	return
 end
-vim.opt.rtp:prepend(lazypath)
 
+vim.cmd([[packadd packer.nvim]])
 
-local plugins = {
-    "nvim-lua/plenary.nvim",     -- Common utilities
-    "kyazdani42/nvim-tree.lua",
-    "kyazdani42/nvim-web-devicons", -- File icons
-    "nvim-telescope/telescope.nvim",
-    "nvim-telescope/telescope-ui-select.nvim",
-    "nvim-telescope/telescope-file-browser.nvim",
-    "simrat39/symbols-outline.nvim",
-    "norcalli/nvim-colorizer.lua",
-    "kylechui/nvim-surround",
-    "b3nj5m1n/kommentary",
-    "ThePrimeagen/harpoon",
+packer.startup(function(use)
+	use("wbthomason/packer.nvim")
+	use("nvim-lua/plenary.nvim") -- Common utilities
+	use("kyazdani42/nvim-tree.lua")
+	use("kyazdani42/nvim-web-devicons") -- File icons
+	use("nvim-telescope/telescope.nvim")
+	use("nvim-telescope/telescope-ui-select.nvim")
+	use("nvim-telescope/telescope-file-browser.nvim")
+	use("simrat39/symbols-outline.nvim")
+	use("norcalli/nvim-colorizer.lua")
+	use("kylechui/nvim-surround")
+	use("b3nj5m1n/kommentary")
+	use("ThePrimeagen/harpoon")
 
-    -- neogit
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "sindrets/diffview.nvim",
-        },
-    },
-    "f-person/git-blame.nvim",
-    "vim-scripts/auto-pairs-gentle", -- bracket autocompletion
+	-- neogit
+	use({
+		"TimUntersberger/neogit",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"sindrets/diffview.nvim",
+		},
+	})
+	use("f-person/git-blame.nvim")
+	use("vim-scripts/auto-pairs-gentle") -- bracket autocompletion
 
-    -- Fancier statusline
-    {
-        "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "kyazdani42/nvim-web-devicons",
-            "arkav/lualine-lsp-progress",
-        },
-    },
+	-- Fancier statusline
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"kyazdani42/nvim-web-devicons",
+			"arkav/lualine-lsp-progress",
+		},
+	})
 
-    -- LSP Client
-    "neovim/nvim-lspconfig",
-    {
-        "folke/trouble.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
-    },
-    -- Language Server installer
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    "MunifTanjim/prettier.nvim",
+	-- LSP Client
+	use("neovim/nvim-lspconfig")
+	use({
+		"folke/trouble.nvim",
+		requires = "kyazdani42/nvim-web-devicons",
+	})
+	-- Language Server installer
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+	use("MunifTanjim/prettier.nvim")
 
-    -- Customizations over LSP
-    -- Show VSCode-esque pictograms
-    "onsails/lspkind-nvim",
-    -- show various elements of LSP as UI
-    { "tami5/lspsaga.nvim",              dependencies = { "neovim/nvim-lspconfig" } },
+	-- Customizations over LSP
+	-- Show VSCode-esque pictograms
+	use("onsails/lspkind-nvim")
+	-- show various elements of LSP as UI
+	use({ "tami5/lspsaga.nvim", requires = { "neovim/nvim-lspconfig" } })
 
-    -- Autocompletion plugin
-    {
-        "hrsh7th/nvim-cmp",
-        dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
-            "hrsh7th/cmp-buffer",
-            "hrsh7th/cmp-path",
-            "hrsh7th/cmp-cmdline",
-        },
-    },
+	-- Autocompletion plugin
+	use({
+		"hrsh7th/nvim-cmp",
+		requires = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-cmdline",
+		},
+	})
 
-    -- snippets
-    {
-        "hrsh7th/cmp-vsnip",
-        dependencies = {
-            "hrsh7th/vim-vsnip",
-            "rafamadriz/friendly-snippets",
-        },
-    },
+	-- snippets
+	use({
+		"hrsh7th/cmp-vsnip",
+		requires = {
+			"hrsh7th/vim-vsnip",
+			"rafamadriz/friendly-snippets",
+		},
+	})
 
-    "mfussenegger/nvim-jdtls",
-    "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-    -- Debugging
-    "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
-    { "nvim-treesitter/nvim-treesitter", build = "TSUpdate" },
-    { "NTBBloodbath/rest.nvim",          dependencies = { "nvim-lua/plenary.nvim" } },
-    "andreshazard/vim-freemarker",
+	use("mfussenegger/nvim-jdtls")
+	use("jose-elias-alvarez/null-ls.nvim") -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	-- Debugging
+	use("mfussenegger/nvim-dap")
+	use("rcarriga/nvim-dap-ui")
+	use({ "nvim-treesitter/nvim-treesitter", run = "TSUpdate" })
+	use({ "NTBBloodbath/rest.nvim", requires = { "nvim-lua/plenary.nvim" } })
+	use("andreshazard/vim-freemarker")
 
-    -- colorschemes
-    "folke/tokyonight.nvim",
-    -- use("morhetz/gruvbox")
-    { "ellisonleao/gruvbox.nvim" },
-    "luisiacc/gruvbox-baby",
-    "windwp/nvim-ts-autotag",
-    -- install without yarn or npm
-    {
-        "iamcco/markdown-preview.nvim",
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    },
-    {
-        "scalameta/nvim-metals",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "mfussenegger/nvim-dap",
-        },
-    },
-    { "romgrk/barbar.nvim",      dependencies = "nvim-web-devicons" },
-    "mbbill/undotree",
-    "https://gitlab.com/schrieveslaach/sonarlint.nvim",
-}
-
-local opts = {}
-
-require("lazy").setup(plugins, opts)
+	-- colorschemes
+	use("folke/tokyonight.nvim")
+	-- use("morhetz/gruvbox")
+	use({ "ellisonleao/gruvbox.nvim" })
+	use("luisiacc/gruvbox-baby")
+	use("windwp/nvim-ts-autotag")
+	-- install without yarn or npm
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	})
+	use({
+		"scalameta/nvim-metals",
+		requires = {
+			"nvim-lua/plenary.nvim",
+			"mfussenegger/nvim-dap",
+		},
+	})
+	use({ "romgrk/barbar.nvim", wants = "nvim-web-devicons" })
+	use("mbbill/undotree")
+	use("https://gitlab.com/schrieveslaach/sonarlint.nvim")
+end)
