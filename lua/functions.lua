@@ -147,3 +147,36 @@ function open_nvim_tree(data)
 	-- open the tree
 	require("nvim-tree.api").tree.open()
 end
+
+function split(inputstr, sep)
+	if sep == nil then
+		sep = "%s"
+	end
+	local t = {}
+	for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+		table.insert(t, str)
+	end
+	return t
+end
+
+function sort()
+	local startline = vim.fn.getpos("'<")
+	local endline = vim.fn.getpos("'>")
+	local lines = vim.fn.getline(startline[2], endline[2])
+
+	local t = {}
+	for _, v in ipairs(lines) do
+		inner_t = split(v, ",")
+		for _, inner_v in ipairs(inner_t) do
+			table.insert(t, tonumber(inner_v))
+		end
+	end
+	table.sort(t)
+
+	for k, sorted in ipairs(t) do
+		t[k] = tostring(sorted)
+	end
+	vim.api.nvim_buf_set_lines(vim.api.nvim_get_current_buf(), startline[2], endline[2], true, t)
+end
+
+vim.keymap.set("v", "<Leader>st", ":lua sort()<Return>")
