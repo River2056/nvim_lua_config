@@ -53,7 +53,7 @@ keymap.set("n", "<Leader>bn", ":bnext<Return>")
 keymap.set("n", "<Leader>bp", ":bprevious<Return>")
 keymap.set("n", "<Leader>bd", ":bdelete<Return>")
 keymap.set("n", "<Leader>bda", ":%bd<Bar>e#<Return>") -- delete all buffers except current
-keymap.set("n", "<Leader>ls", ":ls<Return>") -- list all buffers
+keymap.set("n", "<Leader>ls", ":ls<Return>")          -- list all buffers
 
 -- Split window
 keymap.set("n", "ss", ":split<Return><C-w>w")
@@ -95,5 +95,8 @@ vim.g.AutoPairs = {
 
 -- Markdown preview
 keymap.set("n", "<Leader>mp", "<Plug>MarkdownPreviewToggle")
+
+-- Presenting keymaps
+keymap.set("n", "<Leader>pp", ":PresentingStart<Return>")
 
 keymap.set("n", "<Leader>ll", "!love .")
