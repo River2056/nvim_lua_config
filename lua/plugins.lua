@@ -115,6 +115,7 @@ local plugins = {
     { "romgrk/barbar.nvim",      dependencies = "nvim-web-devicons" },
     "mbbill/undotree",
     "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+    "https://github.com/sotte/presenting.vim"
 }
 
 local opts = {}
