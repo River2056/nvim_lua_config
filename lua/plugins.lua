@@ -83,7 +83,7 @@ local plugins = {
 	},
 
 	"mfussenegger/nvim-jdtls",
-	"jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+	-- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
 	-- Debugging
 	"mfussenegger/nvim-dap",
 	"rcarriga/nvim-dap-ui",
@@ -130,6 +130,13 @@ local plugins = {
 			--   If not available, we use `mini` as the fallback
 
 			"rcarriga/nvim-notify",
+		},
+	},
+	{
+		"nvimdev/guard.nvim",
+		-- Builtin configuration, optional
+		dependencies = {
+			"nvimdev/guard-collection",
 		},
 	},
 }
