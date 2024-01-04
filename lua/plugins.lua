@@ -11,9 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
-    "nvim-lua/plenary.nvim",     -- Common utilities
+    "nvim-lua/plenary.nvim",        -- Common utilities
     "kyazdani42/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
@@ -61,7 +60,17 @@ local plugins = {
     -- Show VSCode-esque pictograms
     "onsails/lspkind-nvim",
     -- show various elements of LSP as UI
-    { "tami5/lspsaga.nvim",              dependencies = { "neovim/nvim-lspconfig" } },
+    -- { "tami5/lspsaga.nvim",              dependencies = { "neovim/nvim-lspconfig" } },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        }
+    },
 
     -- Autocompletion plugin
     {
@@ -84,12 +93,28 @@ local plugins = {
     },
 
     "mfussenegger/nvim-jdtls",
-    "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    -- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     -- Debugging
+    "leoluz/nvim-dap-go",
     "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
+    { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "nvim-treesitter/nvim-treesitter", build = "TSUpdate" },
-    { "NTBBloodbath/rest.nvim",          dependencies = { "nvim-lua/plenary.nvim" } },
+    {
+        "vhyrro/luarocks.nvim",
+        priority = 1000,
+        config = true,
+        opts = {
+            rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" }
+        }
+    },
+    {
+        "rest-nvim/rest.nvim",
+        ft = "http",
+        dependencies = { "luarocks.nvim" },
+        config = function()
+            require("rest-nvim").setup()
+        end,
+    },
     "andreshazard/vim-freemarker",
 
     -- colorschemes
@@ -115,6 +140,83 @@ local plugins = {
     { "romgrk/barbar.nvim",      dependencies = "nvim-web-devicons" },
     "mbbill/undotree",
     "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+    "https://github.com/sotte/presenting.vim",
+    { "akinsho/toggleterm.nvim",          version = "*", config = true },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+
+            "rcarriga/nvim-notify",
+        },
+    },
+    {
+        "nvimdev/guard.nvim",
+        -- Builtin configuration, optional
+        dependencies = {
+            "nvimdev/guard-collection",
+        },
+    },
+    { "Hoffs/omnisharp-extended-lsp.nvim" },
+    {
+        "stevearc/oil.nvim",
+        opts = {},
+        -- Optional dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require("oil").setup({
+                default_file_explorer = true,
+            })
+        end
+    },
+    {
+        "mfussenegger/nvim-lint",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            local lint = require("lint")
+            lint.linters_by_ft = {
+                typescript = { "eslint_d" },
+                -- javascript = { "eslint_d" },
+                typescriptreact = { "eslint_d" },
+                javascriptreact = { "eslint_d" }
+            }
+
+            local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+            vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" }, {
+                group = lint_augroup,
+                callback = function()
+                    lint.try_lint()
+                end
+            })
+
+            vim.keymap.set("n", "<leader>l", function()
+                lint.try_lint()
+            end, { desc = "Trigger linting for current file" })
+        end
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            -- { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+        },
+    }
 }
 
 local opts = {}
