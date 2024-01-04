@@ -96,4 +96,7 @@ vim.g.AutoPairs = {
 -- Markdown preview
 keymap.set("n", "<Leader>mp", "<Plug>MarkdownPreviewToggle")
 
+-- Presenting keymaps
+keymap.set("n", "<Leader>pp", ":PresentingStart<Return>")
+
 keymap.set("n", "<Leader>ll", "!love .")

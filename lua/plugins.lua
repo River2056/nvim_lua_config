@@ -11,9 +11,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-
 local plugins = {
-    "nvim-lua/plenary.nvim",     -- Common utilities
+    "nvim-lua/plenary.nvim",        -- Common utilities
     "kyazdani42/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
@@ -84,7 +83,7 @@ local plugins = {
     },
 
     "mfussenegger/nvim-jdtls",
-    "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    -- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     -- Debugging
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
@@ -115,6 +114,32 @@ local plugins = {
     { "romgrk/barbar.nvim",      dependencies = "nvim-web-devicons" },
     "mbbill/undotree",
     "https://gitlab.com/schrieveslaach/sonarlint.nvim",
+    "https://github.com/sotte/presenting.vim",
+    { "akinsho/toggleterm.nvim",          version = "*", config = true },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+
+            "rcarriga/nvim-notify",
+        },
+    },
+    {
+        "nvimdev/guard.nvim",
+        -- Builtin configuration, optional
+        dependencies = {
+            "nvimdev/guard-collection",
+        },
+    },
+    { "Hoffs/omnisharp-extended-lsp.nvim" }
 }
 
 local opts = {}
