@@ -123,8 +123,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms4g",
-        "-Xms100m",
+        "-Xms2g",
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
         "-XX:+UseParallelGC",
@@ -159,14 +158,14 @@ local config = {
             configuration = {
                 updateBuildConfiguration = "interactive",
                 runtimes = {
-                    --[[ {
-						name = "JavaSE-11",
-						path = c.jdtls_jdk11_path,
-					},
-					{
-						name = "JavaSE-15",
-						path = c.jdtls_jdk15_path,
-					}, ]]
+                    {
+                        name = "JavaSE-11",
+                        path = c.jdtls_jdk11_path,
+                    },
+                    {
+                        name = "JavaSE-15",
+                        path = c.jdtls_jdk15_path,
+                    },
                     {
                         name = "JavaSE-17",
                         path = c.jdtls_jdk17_path,
