@@ -91,7 +91,12 @@ else
 end
 
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-local workspace_dir = WORKSPACE_PATH .. project_name
+local project_path_prefix = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h")
+local rootdir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" })
+local fix_path = rootdir:gsub(project_path_prefix, "")
+
+-- local workspace_dir = WORKSPACE_PATH .. project_name
+local workspace_dir = WORKSPACE_PATH .. fix_path
 
 JAVA_DAP_ACTIVE = true
 
