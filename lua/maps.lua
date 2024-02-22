@@ -65,10 +65,10 @@ keymap.set("", "<C-k>", "<C-w>k")
 keymap.set("", "<C-l>", "<C-w>l")
 
 -- Resize window
-keymap.set("n", "Ó", "<C-w><")
-keymap.set("n", "Ò", "<C-w>>")
-keymap.set("n", "", "<C-w>+")
-keymap.set("n", "Ô", "<C-w>-")
+keymap.set("n", "˙", "<C-w><")
+keymap.set("n", "¬", "<C-w>>")
+keymap.set("n", "∆", "<C-w>+")
+keymap.set("n", "˚", "<C-w>-")
 
 -- Visual indent
 keymap.set("v", ">", ">gv")
