@@ -157,6 +157,12 @@ local config = {
 
     settings = {
         java = {
+            project = {
+                referencedLibraries = {
+                    "/Users/kevintung/code/aibank-ms/tfb-nano-message-schema/build/libs/tfb-nano-message-schema-1.0.0-SNAPSHOT.jar",
+                    "/Users/kevintung/code/aibank-ms/shared-components/tfb-esb-component/lib/eai.jar"
+                }
+            },
             eclipse = {
                 downloadSources = true,
             },
@@ -189,6 +195,9 @@ local config = {
                     "org",
                     "com",
                 },
+            },
+            gradle = {
+                enabled = true
             },
             maven = {
                 downloadSources = true,
@@ -279,5 +288,4 @@ dap.configurations.java = {
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
 require("jdtls").start_or_attach(config)
