@@ -17,7 +17,7 @@ null_ls.setup({
         formatting.stylua,
         -- formatting.google_java_format,
         formatting.gofmt,
-        formatting.prettier,
+        -- formatting.prettier,
         formatting.ktlint,
     },
 })

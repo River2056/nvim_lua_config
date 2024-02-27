@@ -3,17 +3,7 @@ local prettier = require("prettier")
 prettier.setup({
     bin = "prettier", -- or `'prettierd'` (v0.22+)
     filetypes = {
-        "css",
-        "graphql",
-        "javascript",
-        "javascriptreact",
-        "json",
-        "less",
-        "markdown",
-        "scss",
-        "typescript",
-        "typescriptreact",
-        "yaml",
+        "html",
     },
     cli_options = {
         arrow_parens = "always",
