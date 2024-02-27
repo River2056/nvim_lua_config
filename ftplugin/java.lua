@@ -129,6 +129,7 @@ local config = {
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
         "-Xms2g",
+        "-Xms100m",
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
         "-XX:+UseParallelGC",
