@@ -70,7 +70,7 @@ M.servers = {
     "bashls",
     "pyright",
     "lua_ls",
-    "html",
+    -- "html",
     "tsserver",
     "jsonls",
     "vuels",
