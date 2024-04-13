@@ -84,13 +84,13 @@ keymap.set("n", "<Leader>dg", ":diffget<Return>")
 
 -- autopairs
 vim.g.AutoPairs = {
-	["("] = ")",
-	["["] = "]",
-	["{"] = "}",
-	["'"] = "'",
-	['"'] = '"',
-	["`"] = "`",
-	-- ["<"] = ">",
+    ["("] = ")",
+    ["["] = "]",
+    ["{"] = "}",
+    ["'"] = "'",
+    ['"'] = '"',
+    ["`"] = "`",
+    -- ["<"] = ">",
 }
 
 -- Markdown preview
@@ -100,3 +100,6 @@ keymap.set("n", "<Leader>mp", "<Plug>MarkdownPreviewToggle")
 keymap.set("n", "<Leader>pp", ":PresentingStart<Return>")
 
 keymap.set("n", "<Leader>ll", "!love .")
+
+-- Oil
+keymap.set("n", "-", "<CMD>Oil<Return>", { desc = "Open parent directory" })
