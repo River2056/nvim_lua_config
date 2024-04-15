@@ -1,3 +1,7 @@
+--[[
+    in case if jdtls keeps crashing, remove the data directory from mason packages
+    and rebuild again
+]]
 local c = require("kevin.constants")
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
@@ -16,6 +20,7 @@ local extendedClientCapabilities = jdtls.extendedClientCapabilities
 extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 -- Determine OS
+local config_path = vim.fn.stdpath("config")
 local home = vim.fn.stdpath("data") .. "/mason/packages"
 local java_debug_path = c.java_debug_path
 local vscode_java_test_path = c.vscode_java_test_path
@@ -114,6 +119,8 @@ if JAVA_DAP_ACTIVE then
         )
     )
 end
+
+vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. "*.jar"), "\n"))
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
     -- The command that starts the language server

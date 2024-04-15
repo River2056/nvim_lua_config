@@ -116,6 +116,19 @@ nvim_lsp.tsserver.setup({
     root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git") or vim.loop.cwd(),
 })
 
+nvim_lsp.html.setup({
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true,
+        },
+        provideFormatter = true
+    },
+    on_attach = lsp.on_attach,
+    capabilities = lsp.capabilities,
+})
+
 -- servers that lspconfig supports but mason doesn't have
 nvim_lsp.ccls.setup({
     on_attach = lsp.on_attach,

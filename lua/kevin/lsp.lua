@@ -70,7 +70,7 @@ M.servers = {
     "bashls",
     "pyright",
     "lua_ls",
-    -- "html",
+    "html",
     "tsserver",
     "jsonls",
     "vuels",
@@ -85,7 +85,8 @@ M.servers = {
     "cssls",
     "rust_analyzer",
     "marksman",
-    "omnisharp"
+    "omnisharp",
+    "clangd"
 }
 
 return M
