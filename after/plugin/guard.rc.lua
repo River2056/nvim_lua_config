@@ -3,6 +3,8 @@ local ft = require("guard.filetype")
 ft("python"):fmt("black")
 ft("lua"):fmt("lsp"):append("stylua")
 ft('typescript,javascript,typescriptreact'):fmt('prettier')
+-- ft('html'):fmt('prettier')
+-- ft('html'):fmt("lsp"):append("prettier")
 ft("cs"):fmt("lsp"):append("csharpier")
 ft("c"):fmt("lsp"):append("clang-format")
 

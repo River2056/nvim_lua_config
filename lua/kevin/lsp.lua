@@ -78,14 +78,12 @@ M.servers = {
     "golangci_lint_ls",
     "emmet_ls",
     "kotlin_language_server",
-    "powershell_es",
     "sqlls",
     "cmake",
     "yamlls",
     "cssls",
     "rust_analyzer",
     "marksman",
-    "omnisharp",
     "clangd"
 }
 

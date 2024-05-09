@@ -18,6 +18,8 @@ null_ls.setup({
         -- formatting.google_java_format,
         formatting.gofmt,
         -- formatting.prettier,
+        null_ls.builtins.diagnostics.eslint_d,
+        null_ls.builtins.code_actions.eslint_d,
         formatting.ktlint,
     },
 })
