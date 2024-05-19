@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "nvim-lua/plenary.nvim",        -- Common utilities
+    "nvim-lua/plenary.nvim",     -- Common utilities
     "kyazdani42/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
@@ -86,7 +86,7 @@ local plugins = {
     -- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     -- Debugging
     "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
+    { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "nvim-treesitter/nvim-treesitter", build = "TSUpdate" },
     { "NTBBloodbath/rest.nvim",          dependencies = { "nvim-lua/plenary.nvim" } },
     "andreshazard/vim-freemarker",
@@ -141,15 +141,29 @@ local plugins = {
     },
     { "Hoffs/omnisharp-extended-lsp.nvim" },
     {
-        'stevearc/oil.nvim',
+        "stevearc/oil.nvim",
         opts = {},
         -- Optional dependencies
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("oil").setup({
-                default_file_explorer = true
+                default_file_explorer = true,
             })
-        end
+        end,
+    },
+    {
+        "folke/flash.nvim",
+        event = "VeryLazy",
+        ---@type Flash.Config
+        opts = {},
+        -- stylua: ignore
+        keys = {
+            { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
+            { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+        },
     }
 }
 
