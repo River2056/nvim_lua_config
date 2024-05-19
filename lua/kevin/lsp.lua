@@ -68,7 +68,9 @@ end
 
 M.servers = {
     "bashls",
+    -- "jedi_language_server",
     "pyright",
+    "lemminx",
     "lua_ls",
     "html",
     "tsserver",
