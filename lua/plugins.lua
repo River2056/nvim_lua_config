@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "nvim-lua/plenary.nvim",     -- Common utilities
+    "nvim-lua/plenary.nvim",        -- Common utilities
     "kyazdani42/nvim-tree.lua",
     "kyazdani42/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
@@ -60,7 +60,17 @@ local plugins = {
     -- Show VSCode-esque pictograms
     "onsails/lspkind-nvim",
     -- show various elements of LSP as UI
-    { "tami5/lspsaga.nvim",              dependencies = { "neovim/nvim-lspconfig" } },
+    -- { "tami5/lspsaga.nvim",              dependencies = { "neovim/nvim-lspconfig" } },
+    {
+        'nvimdev/lspsaga.nvim',
+        config = function()
+            require('lspsaga').setup({})
+        end,
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter', -- optional
+            'nvim-tree/nvim-web-devicons',     -- optional
+        }
+    },
 
     -- Autocompletion plugin
     {
@@ -200,7 +210,7 @@ local plugins = {
         -- stylua: ignore
         keys = {
             { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
-            { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
+            -- { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
             { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
             { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
             { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
