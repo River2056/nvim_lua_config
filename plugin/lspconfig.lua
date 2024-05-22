@@ -128,8 +128,19 @@ nvim_lsp.tsserver.setup({
     end,
 }) ]]
 
+-- local htmlFormatter = lsp.capabilities
+--[[ htmlFormatter["html.format.wrapLineLength"] = 180
+htmlFormatter["html.format.wrapAttributes"] = "aligned-multiple" ]]
 nvim_lsp.html.setup({
     cmd = { "vscode-html-language-server", "--stdio" },
+    settings = {
+        html = {
+            format = {
+                wrapLineLength = 180,
+                wrapAttributes = 'aligned-multiple'
+            }
+        }
+    },
     filetypes = { "html", "templ" },
     init_options = {
         configurationSection = { "html", "css" },
