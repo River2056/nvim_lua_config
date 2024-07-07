@@ -30,7 +30,6 @@ local function lsp_keymaps(bufnr)
     local opts = { noremap = true, silent = true }
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>Telescope lsp_declarations<CR>", opts)
-    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
     vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
     vim.api.nvim_buf_set_keymap(
         bufnr,
@@ -296,4 +295,5 @@ dap.configurations.java = {
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
+require("jdtls").start_or_attach(config)
 require("jdtls").start_or_attach(config)
