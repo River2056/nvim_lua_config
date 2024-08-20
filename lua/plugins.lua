@@ -95,6 +95,7 @@ local plugins = {
     "mfussenegger/nvim-jdtls",
     -- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     -- Debugging
+    "leoluz/nvim-dap-go",
     "mfussenegger/nvim-dap",
     { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "nvim-treesitter/nvim-treesitter", build = "TSUpdate" },
@@ -174,7 +175,33 @@ local plugins = {
             require("oil").setup({
                 default_file_explorer = true,
             })
-        end,
+        end
+    },
+    {
+        "mfussenegger/nvim-lint",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            local lint = require("lint")
+            lint.linters_by_ft = {
+                typescript = { "eslint_d" },
+                -- javascript = { "eslint_d" },
+                typescriptreact = { "eslint_d" },
+                javascriptreact = { "eslint_d" }
+            }
+
+            local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+            vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave", "TextChanged" }, {
+                group = lint_augroup,
+                callback = function()
+                    lint.try_lint()
+                end
+            })
+
+            vim.keymap.set("n", "<leader>l", function()
+                lint.try_lint()
+            end, { desc = "Trigger linting for current file" })
+        end
     },
     {
         "folke/flash.nvim",
