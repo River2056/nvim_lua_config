@@ -82,6 +82,8 @@ for _, server in ipairs(lsp.servers) do
 end
 
 -- specific additional configs per language
+local libs = vim.api.nvim_get_runtime_file("", true)
+table.insert(libs, "${3rd}/love2d/library")
 nvim_lsp.lua_ls.setup({
     on_attach = lsp.on_attach,
     capabilities = lsp.capabilities,
@@ -94,7 +96,7 @@ nvim_lsp.lua_ls.setup({
 
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
+                library = libs,
                 checkThirdParty = false,
             },
         },

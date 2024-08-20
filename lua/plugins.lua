@@ -95,6 +95,7 @@ local plugins = {
     "mfussenegger/nvim-jdtls",
     -- "jose-elias-alvarez/null-ls.nvim", -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     -- Debugging
+    "leoluz/nvim-dap-go",
     "mfussenegger/nvim-dap",
     { "rcarriga/nvim-dap-ui",            dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "nvim-treesitter/nvim-treesitter", build = "TSUpdate" },
@@ -183,7 +184,7 @@ local plugins = {
             local lint = require("lint")
             lint.linters_by_ft = {
                 typescript = { "eslint_d" },
-                javascript = { "eslint_d" },
+                -- javascript = { "eslint_d" },
                 typescriptreact = { "eslint_d" },
                 javascriptreact = { "eslint_d" }
             }
