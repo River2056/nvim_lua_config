@@ -12,9 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
-    "nvim-lua/plenary.nvim",        -- Common utilities
+    "nvim-lua/plenary.nvim",       -- Common utilities
     "kyazdani42/nvim-tree.lua",
-    "kyazdani42/nvim-web-devicons", -- File icons
+    "nvim-tree/nvim-web-devicons", -- File icons
     "nvim-telescope/telescope.nvim",
     "nvim-telescope/telescope-ui-select.nvim",
     "nvim-telescope/telescope-file-browser.nvim",
@@ -39,7 +39,7 @@ local plugins = {
     {
         "nvim-lualine/lualine.nvim",
         dependencies = {
-            "kyazdani42/nvim-web-devicons",
+            "nvim-tree/nvim-web-devicons",
             "arkav/lualine-lsp-progress",
         },
     },
@@ -48,7 +48,7 @@ local plugins = {
     "neovim/nvim-lspconfig",
     {
         "folke/trouble.nvim",
-        dependencies = "kyazdani42/nvim-web-devicons",
+        dependencies = "nvim-tree/nvim-web-devicons",
     },
     -- Language Server installer
     "williamboman/mason.nvim",
@@ -212,12 +212,20 @@ local plugins = {
         keys = {
             { "s",     mode = { "n", "x", "o" }, function() require("flash").jump() end,              desc = "Flash" },
             -- { "S",     mode = { "n", "x", "o" }, function() require("flash").treesitter() end,        desc = "Flash Treesitter" },
-            { "r",     mode = "o",               function() require("flash").remote() end,            desc = "Remote Flash" },
-            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc = "Toggle Flash Search" },
+            { "r",     mode = "o",               function() require("flash").remote() end,            desc =
+            "Remote Flash" },
+            { "R",     mode = { "o", "x" },      function() require("flash").treesitter_search() end,
+                                                                                                          desc =
+                "Treesitter Search" },
+            { "<c-s>", mode = { "c" },           function() require("flash").toggle() end,            desc =
+            "Toggle Flash Search" },
         },
     }
 }
+
+local opts = {}
+
+require("lazy").setup(plugins, opts)
 
 local opts = {}
 
