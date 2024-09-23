@@ -92,7 +92,7 @@ M.servers = {
     "cssls",
     "rust_analyzer",
     "marksman",
-    "omnisharp",
+    "clangd",
     "zls"
 }
 
