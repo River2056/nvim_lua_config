@@ -4,6 +4,10 @@ ft("python"):fmt("black")
 ft("lua"):fmt("lsp"):append("stylua")
 ft('typescript,javascript,typescriptreact'):fmt('prettier')
 ft("cs"):fmt("lsp"):append("csharpier")
+ft("c"):fmt("lsp"):append("clang-format")
+ft("go"):fmt("gofumpt")
+ft("zig"):fmt("zigfmt")
+ft("rs"):fmt("rustfmt")
 
 vim.g.guard_config = {
     -- the only options for the setup function
