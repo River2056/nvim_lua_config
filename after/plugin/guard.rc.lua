@@ -5,9 +5,9 @@ ft("lua"):fmt("lsp"):append("stylua")
 ft('typescript,javascript,typescriptreact'):fmt('prettier')
 ft("cs"):fmt("lsp"):append("csharpier")
 
-require("guard").setup({
+vim.g.guard_config = {
     -- the only options for the setup function
     fmt_on_save = true,
     -- Use lsp if no formatter was defined for this filetype
     lsp_as_default_formatter = false,
-})
+}

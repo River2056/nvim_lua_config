@@ -71,7 +71,7 @@ M.servers = {
     "pyright",
     "lua_ls",
     "html",
-    "tsserver",
+    "ts_ls",
     "jsonls",
     "vuels",
     "gopls",
