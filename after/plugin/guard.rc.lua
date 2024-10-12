@@ -9,6 +9,7 @@ ft('typescript,typescriptreact'):fmt('eslint_d')
 ft("cs"):fmt("lsp"):append("csharpier")
 ft("c"):fmt("lsp"):append("clang-format")
 ft("go"):fmt("gofumpt")
+ft("zig"):fmt("zigfmt")
 ft("rs"):fmt("rustfmt")
 
 vim.g.guard_config = {
