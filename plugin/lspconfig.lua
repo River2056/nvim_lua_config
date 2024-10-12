@@ -103,7 +103,7 @@ nvim_lsp.lua_ls.setup({
     },
 })
 
-nvim_lsp.tsserver.setup({
+nvim_lsp.ts_ls.setup({
     on_attach = lsp.on_attach,
     capabilities = lsp.capabilities,
     filetypes = {
