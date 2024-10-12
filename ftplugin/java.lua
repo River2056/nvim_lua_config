@@ -100,8 +100,13 @@ local project_path_prefix = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h")
 local rootdir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" })
 local fix_path = rootdir:gsub(project_path_prefix, "")
 
+--[[ print(project_path_prefix)
+print(rootdir)
+print(fix_path) ]]
+
 -- local workspace_dir = WORKSPACE_PATH .. project_name
 local workspace_dir = WORKSPACE_PATH .. fix_path
+-- local workspace_dir = WORKSPACE_PATH .. project_path_prefix
 
 JAVA_DAP_ACTIVE = true
 
@@ -135,8 +140,7 @@ local config = {
         "-Declipse.product=org.eclipse.jdt.ls.core.product",
         "-Dlog.protocol=true",
         "-Dlog.level=ALL",
-        "-Xms4g",
-        "-Xms100m",
+        "-Xmx4g",
         "-XX:AdaptiveSizePolicyWeight=90",
         "-XX:GCTimeRatio=4",
         "-XX:+UseParallelGC",
@@ -165,6 +169,12 @@ local config = {
 
     settings = {
         java = {
+            sources = {
+                organizeImports = {
+                    starThreshold = 99999,
+                    staticStarThreshold = 99999
+                }
+            },
             project = {
                 referencedLibraries = {
                     "/Users/kevintung/code/aibank-ms/tfb-nano-message-schema/build/libs/tfb-nano-message-schema-1.0.0-SNAPSHOT.jar",
@@ -296,5 +306,5 @@ dap.configurations.java = {
 
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
+-- require("jdtls").start_or_attach(config)
 require("jdtls").start_or_attach(config)
