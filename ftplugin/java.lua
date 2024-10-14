@@ -78,7 +78,7 @@ local function on_attach(client, bufnr)
 
     require("jdtls").setup_dap({ hotcodereplace = "auto" })
     require("jdtls.dap").setup_dap_main_class_configs()
-    require("jdtls.setup").add_commands()
+    -- require("jdtls.setup").add_commands()
     vim.lsp.codelens.refresh()
 end
 
@@ -113,19 +113,23 @@ JAVA_DAP_ACTIVE = true
 local bundles = {}
 
 if JAVA_DAP_ACTIVE then
-    vim.list_extend(bundles, vim.split(vim.fn.glob(vscode_java_test_path .. "server/*.jar"), "\n"))
+    vim.list_extend(bundles, vim.split(vim.fn.glob(vscode_java_test_path .. "server/*.jar", 1), "\n"))
     vim.list_extend(
         bundles,
         vim.split(
             vim.fn.glob(
-                java_debug_path .. "com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar"
+                java_debug_path .. "com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar", 1
             ),
             "\n"
         )
     )
+
+    --[[ for k, v in ipairs(bundles) do
+        print(v)
+    end ]]
 end
 
-vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. "*.jar"), "\n"))
+vim.list_extend(bundles, vim.split(vim.fn.glob(config_path .. "*.jar", 1), "\n"))
 -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
 local config = {
     -- The command that starts the language server
