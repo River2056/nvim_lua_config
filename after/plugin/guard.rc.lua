@@ -8,6 +8,7 @@ ft("c"):fmt("lsp"):append("clang-format")
 ft("go"):fmt("gofumpt")
 ft("zig"):fmt("zigfmt")
 ft("rs"):fmt("rustfmt")
+ft("nix"):fmt("nixfmt")
 
 vim.g.guard_config = {
     -- the only options for the setup function
