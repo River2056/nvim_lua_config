@@ -107,3 +107,4 @@ keymap.set("n", "-", "<CMD>Oil<Return>", { desc = "Open parent directory" })
 -- Noice
 keymap.set("n", "<Leader>n", "<cmd>Noice<Return>")
 keymap.set("n", "<Leader>nd", "<cmd>NoiceDismiss<Return>")
+keymap.set("n", "<Leader>\\", "<cmd>ToggleTerm<Return>")
